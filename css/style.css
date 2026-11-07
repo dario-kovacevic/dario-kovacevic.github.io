@@ -1,0 +1,86 @@
+/* Pit Lane - foglio di stile condiviso da tutte le pagine */
+:root {
+  --asfalto: #2b2d31;
+  --cordolo: #c8102e;
+  --bianco: #f6f5f2;
+  --grigio: #9a9ca1;
+  --gomma: #17181a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+  color: var(--asfalto);
+  background: var(--bianco);
+}
+
+/* cordolo rosso/bianco sotto l'intestazione */
+header {
+  background: var(--gomma);
+  color: var(--bianco);
+  padding: 1.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 10px solid;
+  border-image: repeating-linear-gradient(90deg, var(--cordolo) 0 40px, var(--bianco) 40px 80px) 1;
+}
+
+.logo { font-size: 1.7rem; font-weight: 900; font-style: italic; letter-spacing: 0.03em; }
+
+nav a {
+  color: var(--bianco);
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 1.6rem;
+  padding: 0.2rem 0;
+  border-bottom: 3px solid transparent;
+}
+nav a:hover, nav a.attivo { border-bottom-color: var(--cordolo); }
+
+main { max-width: 920px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+
+h1 { font-size: 2.8rem; line-height: 1.1; font-style: italic; font-weight: 900; margin: 0 0 1rem; }
+h2 { font-size: 1.5rem; margin-top: 2.5rem; padding-left: 0.8rem; border-left: 6px solid var(--cordolo); }
+
+p { max-width: 70ch; }
+
+figure { margin: 2rem 0; }
+figure img { width: 100%; height: auto; max-height: 440px; object-fit: cover; display: block; }
+figcaption { font-size: 0.85rem; color: #55575c; margin-top: 0.4rem; }
+
+.due-colonne { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.due-colonne figure { margin: 0; }
+
+table { border-collapse: collapse; width: 100%; background: #fff; }
+th, td { padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid #dcdcd8; }
+th { background: var(--asfalto); color: var(--bianco); }
+tr:nth-child(even) td { background: #f0efeb; }
+
+ul.lista li { margin-bottom: 0.4rem; }
+a { color: var(--cordolo); }
+
+footer { background: var(--gomma); color: var(--grigio); text-align: center; padding: 1.5rem 1.5rem 4.5rem; font-size: 0.85rem; }
+
+/* Banner creato dallo script */
+#avviso {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--cordolo); color: var(--bianco);
+  padding: 0.9rem 1.5rem;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  font-weight: bold;
+}
+#avviso button {
+  background: var(--bianco); color: var(--asfalto);
+  border: 0; padding: 0.45rem 1.1rem; cursor: pointer; font-weight: bold; font-family: inherit;
+}
+
+@media (max-width: 700px) {
+  .due-colonne { grid-template-columns: 1fr; }
+  h1 { font-size: 2.1rem; }
+}
