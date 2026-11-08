@@ -1,0 +1,173 @@
+/* Palette: asfalto, cordolo rosso, bianco gesso, giallo box */
+:root {
+  --asfalto: #2a2c30;
+  --asfalto-chiaro: #43464c;
+  --cordolo: #d62828;
+  --gesso: #f6f5f1;
+  --grigio: #e3e2dd;
+  --giallo: #f2c230;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--gesso);
+  color: var(--asfalto);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+header {
+  background: var(--asfalto);
+  color: var(--gesso);
+  padding: 22px 0 18px;
+}
+
+.contenitore {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.logo {
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: 30px;
+  letter-spacing: -0.5px;
+  margin: 0 0 10px;
+}
+
+nav a {
+  color: var(--gesso);
+  text-decoration: none;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  margin-right: 22px;
+  padding-bottom: 3px;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover { border-bottom-color: var(--giallo); }
+nav a.attiva { border-bottom-color: var(--cordolo); }
+
+/* Il cordolo: la striscia rossa e bianca sotto l'intestazione */
+.cordolo {
+  height: 14px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--cordolo) 0, var(--cordolo) 40px,
+    var(--gesso) 40px, var(--gesso) 80px
+  );
+}
+
+main { padding: 36px 0 24px; }
+
+h1 {
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: 40px;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+h2 {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 26px;
+  margin: 38px 0 10px;
+  color: var(--asfalto);
+}
+
+h3 {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 20px;
+  margin: 0 0 4px;
+}
+
+p { max-width: 70ch; }
+
+a { color: var(--cordolo); }
+
+.immagini {
+  display: flex;
+  gap: 20px;
+  margin: 28px 0;
+  align-items: flex-start;
+}
+
+figure {
+  margin: 0;
+  flex: 1;
+  background: var(--grigio);
+  padding: 10px;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  font-size: 15px;
+  padding-top: 8px;
+  color: var(--asfalto-chiaro);
+}
+
+.scheda {
+  border-left: 8px solid var(--asfalto);
+  padding: 4px 0 4px 18px;
+  margin: 22px 0;
+}
+
+.scheda p { margin: 0; }
+
+ul.date {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+}
+
+ul.date li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--grigio);
+}
+
+ul.date strong {
+  display: inline-block;
+  width: 90px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: var(--cordolo);
+}
+
+footer {
+  background: var(--asfalto);
+  color: var(--grigio);
+  font-size: 15px;
+  padding: 18px 0;
+  margin-top: 40px;
+}
+
+/* Il banner creato da script.js */
+#avviso {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--giallo);
+  color: var(--asfalto);
+  padding: 12px 24px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+#avviso button {
+  background: var(--asfalto);
+  color: var(--gesso);
+  border: 0;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 15px;
+}
